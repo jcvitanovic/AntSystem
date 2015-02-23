@@ -47,8 +47,15 @@ def Solution:
 		else:
 			return 0
 
+def load_cities():
+	"""Method for loading and initializing list of cities for TSP problem.
+
+		Returns:
+			list of City : list of objects of class City
+	"""
+
 def evaluate_solution(solution, city_list, distance_matrix = None):
-	"""Helper method for evaluating fitness of the solution. Method computes tour length for object of class Solution
+	"""Method for evaluating fitness of the solution. Method computes tour length for object of class Solution
 
 		Args:
 			solution (Solution) : one instance of TSP solution
@@ -68,6 +75,7 @@ def evaluate_population(solutions, city_list, distance_matrix = None):
 			distance_matrix (list of double) : n x n matrix with all distance values from each city to all other
 
 	"""
+
 
 
 
