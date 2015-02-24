@@ -4,6 +4,13 @@
 
 class City:
 	"""Object representation of a city.
+	
+		Attributes:
+			x (double) : cartesian coordinate
+			y (double) : cartesian coordinate
+			name (string) : city name
+
+
 
 	"""
 
@@ -11,9 +18,9 @@ class City:
 		"""Constructor method for class City.
 		
 			Args:
-				x (double) : cartesian coordinate
-				y (double) : cartesian coordinate
-				name (string) : city name
+				x (double) : cartesian coordinate to be set
+				y (double) : cartesian coordinate to be set
+				name (string) : city name to be set
 
 		"""
 		self.x = x
