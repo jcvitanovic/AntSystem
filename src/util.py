@@ -4,7 +4,7 @@
 
 class City:
 	"""Object representation of a city.
-	
+
 		Attributes:
 			x (double) : cartesian coordinate
 			y (double) : cartesian coordinate
@@ -32,7 +32,8 @@ class Solution:
 
 		Attributes:
 			tour_length(double) : length of the tour for the solution
-			city_permutation(list of int) : array of indicies of cities, represents order of visiting each city
+			city_permutation(list of int) : array of indicies of cities,
+			represents order of visiting each city
 
 	"""
 
@@ -44,7 +45,8 @@ class Solution:
 		self.tour_length = None
 
 	def __cmp__(self, other):
-		"""Implementation of comparable method for class Solutions. Objects of class Solution are compared by attribure tour_length.
+		"""Implementation of comparable method for class Solutions.
+		Objects of class Solution are compared by attribure tour_length.
 
 		"""
 		if self.tour_length > other.tour_length:
@@ -62,23 +64,27 @@ def load_cities():
 	"""
 
 def evaluate_solution(solution, city_list, distance_matrix = None):
-	"""Method for evaluating fitness of the solution. Method computes tour length for object of class Solution
+	"""Method for evaluating fitness of the solution. Computes tour length
+	for object of class Solution
 
 		Args:
 			solution (Solution) : one instance of TSP solution
 			city_list (list of City) : list of all cities
-			distance_matrix (list of double) : n x n matrix with all distance values from each city to all other
+			distance_matrix (list of double) : n x n matrix with all distance 
+											values from each city to all other
 		Returns:
 			Solution : Solution object with updated length
 
 	"""
 
 def evaluate_population(solutions, city_list, distance_matrix = None):
-	"""Entry point method for evaluating entire population of solutions. Accepts list of solutions and delegates the call to evaluate_solution method.
+	"""Entry point method for evaluating entire population of solutions.
+	Accepts list of solutions and delegates the call to evaluate_solution 
 
 		Args:
 			solutions (list of Solution) : list of instances of TSP solutions
 			city_list (list of City) : list of all cities
-			distance_matrix (list of double) : n x n matrix with all distance values from each city to all other
+			distance_matrix (list of double) : n x n matrix with all distance
+											values from each city to all other
 
 	"""
