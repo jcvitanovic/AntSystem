@@ -61,6 +61,7 @@ def load_cities(filepath):
 			filepath (string) : path to txt file with city coordinates
 		Returns:
 			list of City : list of objects of class City
+
 	"""
 	city_list = []
 	with file(filepath) as input_file:
@@ -68,7 +69,7 @@ def load_cities(filepath):
 			(x, y) = (int(elem) for elem in line.rstrip().split("\t"))
 			c = City(x, y)
 			city_list.append(c)
-		return city_list
+	return city_list
 
 def evaluate_solution(solution, city_list, distance_matrix = None):
 	"""Method for evaluating fitness of the solution. Computes tour length
@@ -78,7 +79,7 @@ def evaluate_solution(solution, city_list, distance_matrix = None):
 			solution (Solution) : one instance of TSP solution
 			city_list (list of City) : list of all cities
 			distance_matrix (list of double, optional) : n x n matrix with
-											all distances between cities
+			all distances between cities
 		Returns:
 			Solution : Solution object with updated length
 
@@ -92,6 +93,17 @@ def evaluate_population(solutions, city_list, distance_matrix = None):
 			solutions (list of Solution) : list of instances of TSP solutions
 			city_list (list of City) : list of all cities
 			distance_matrix (list of double, optional) : n x n matrix with
-											all distances between cities
+			all distances between cities
 
 	"""
+	pass
+
+def visualize(city_list, best_solution):
+	"""Method for visualizing algorithm progress.
+		Args:
+			city_list (list of City) : list of all cities
+			best_solution (Solution) : object of class Solution,
+			tour of cities to be visualized
+
+	"""
+	pass

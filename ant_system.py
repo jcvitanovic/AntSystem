@@ -3,24 +3,33 @@ Any System algorithm.
 
 
 """
+from config import *
+from util import *
+
 class AntSystem:
 	"""Object representation of ant system algorithm.
 	Encapsulates attributes and methods for simulating ant colony system.
 		
 		Attributes:
-			//todo
+				city_list (list of City) : list of all cities
+				distance_matrix (list of double, optional) : n x n matrix with
+				all distances between cities
 
 	"""
 
-	def __init__(self):
+	def __init__(self, city_list, distance_matrix):
 		"""Constructor method for class AntSystem.
 		Initialization of all variables and paramaters of algorithm.
-			
+
 			Args:
-				//todo
+				city_list (list of City) : list of all cities
+				distance_matrix (list of double, optional) : n x n matrix with
+				all distances between cities
 
 		"""
-		pass	
+		self.city_list = city_list
+		self.distance_matrix = distance_matrix
+			
 
 	def run(self):
 		"""Entry point of Ant System algorithm, called after __init__.
@@ -30,9 +39,19 @@ class AntSystem:
 		updated and evaporated.
 
 		"""
-		pass
+		for i in range(0, iterations):
+			solutions = []
+			for j in range(0, m):
+				ant = Solution() #create solution
+				ant = __do_walk(self, ant)
+				ant = evaluate_solution(solution, city_list) #evaluate fitness of solution
+				solutions.append(ant)
+			solutions.sort() #sort by fitness : from shortest tour lenght to largest
+			__update_trails(self, top_ants_num)
+			__evaporate_trails(self)
+			visualize(city_list, solutions[0]) #visualize the best solution path
 
-	def __do_walk(self, Solution ant):
+	def __do_walk(self, ant):
 		"""Method that simulates walk of one ant and it's tour of the cities.
 			Args:
 				ant (Solution) : object of class Solution, one ant from colony
@@ -57,14 +76,5 @@ class AntSystem:
 
 		"""
 		pass
-	
-def visualize(self, Solution best_solution):
-	"""Method for visualizing algorithm progress - optimal solution.
-		Args:
-			best_solution (Solution) : object of class Solution,
-			tour of cities to be visualized
-
-	"""
-	pass
 
 
