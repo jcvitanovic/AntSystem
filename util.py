@@ -65,9 +65,10 @@ def load_cities(filepath):
 	city_list = []
 	with file(filepath) as input_file:
 		for line in input_file:
-			(x, y) = (int(elem) for elem in line.rstrip().split(' '))
+			(x, y) = (int(elem) for elem in line.rstrip().split("\t"))
 			c = City(x, y)
 			city_list.append(c)
+		return city_list
 
 def evaluate_solution(solution, city_list, distance_matrix = None):
 	"""Method for evaluating fitness of the solution. Computes tour length
