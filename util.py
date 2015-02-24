@@ -13,7 +13,7 @@ class City:
 	"""
 
 	def __init__(self, x, y, name = ""):
-		"""Constructor method for class City.
+		"""Constructor for class City.
 		
 			Args:
 				x (double) : cartesian coordinate to be set
@@ -36,7 +36,7 @@ class Solution:
 	"""
 
 	def __init__(self):
-		"""Constructor method for class Solution.
+		"""Constructor for class Solution.
 
 		"""
 		self.city_permutation = None
@@ -71,28 +71,28 @@ def load_cities(filepath):
 			city_list.append(c)
 	return city_list
 
-def evaluate_solution(solution, city_list, distance_matrix = None):
+def evaluate_solution(solution, city_list, distance_matrix):
 	"""Method for evaluating fitness of the solution. Computes tour length
 	for object of class Solution
 
 		Args:
 			solution (Solution) : one instance of TSP solution
 			city_list (list of City) : list of all cities
-			distance_matrix (list of double, optional) : n x n matrix with
+			distance_matrix (list of double) : n x n matrix with
 			all distances between cities
 		Returns:
 			Solution : Solution object with updated length
 
 	"""
 
-def evaluate_population(solutions, city_list, distance_matrix = None):
+def evaluate_population(solutions, city_list, distance_matrixe):
 	"""Entry point method for evaluating entire population of solutions.
 	Accepts list of solutions and delegates the call to evaluate_solution 
 
 		Args:
 			solutions (list of Solution) : list of instances of TSP solutions
 			city_list (list of City) : list of all cities
-			distance_matrix (list of double, optional) : n x n matrix with
+			distance_matrix (list of double) : n x n matrix with
 			all distances between cities
 
 	"""

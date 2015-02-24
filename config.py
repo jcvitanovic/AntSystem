@@ -1,17 +1,17 @@
 """Module contains default values of configuration variables.
 	Config variables:
 		m (int) : population size
-		n (int) : number of top solutions for trail update
+		top_ants_num (int) : number of best ants for trail updates
 		alpha (double) : pheromone constant 
 		beta (double) : heuristic constant
 		iterations (int) : number of iterations
-		top_ants_num (int) : number of best ants for trail updates
+		pheromone_init (double) : initial value for pheromone trails on edges
 
 """ 
-m = 0
-n = 0
-ro = 0
-alpha = 0
+m = 40
+ro = 0.2
+alpha = 1
 beta = 0
 iterations =  0
 top_ants_num = 0
+pheromone_init = 1 / 5000
