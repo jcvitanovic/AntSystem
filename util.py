@@ -10,17 +10,15 @@ class City:
 			y (double) : cartesian coordinate
 			name (string) : city name
 
-
-
 	"""
 
-	def __init__(self, x, y, name):
+	def __init__(self, x, y, name = ""):
 		"""Constructor method for class City.
 		
 			Args:
 				x (double) : cartesian coordinate to be set
 				y (double) : cartesian coordinate to be set
-				name (string) : city name to be set
+				name (string, optional) : city name to be set
 
 		"""
 		self.x = x
@@ -56,12 +54,20 @@ class Solution:
 		else:
 			return 0
 
-def load_cities():
+def load_cities(filepath):
 	"""Method for loading and initializing list of cities for TSP problem.
 
+		Args:
+			filepath (string) : path to txt file with city coordinates
 		Returns:
 			list of City : list of objects of class City
 	"""
+	city_list = []
+	with file(filepath) as input_file:
+		for line in input_file:
+			(x, y) = (int(elem) for elem in line.rstrip().split(' '))
+			c = City(x, y)
+			city_list.append(c)
 
 def evaluate_solution(solution, city_list, distance_matrix = None):
 	"""Method for evaluating fitness of the solution. Computes tour length
@@ -70,8 +76,8 @@ def evaluate_solution(solution, city_list, distance_matrix = None):
 		Args:
 			solution (Solution) : one instance of TSP solution
 			city_list (list of City) : list of all cities
-			distance_matrix (list of double) : n x n matrix with all distance 
-											values from each city to all other
+			distance_matrix (list of double, optional) : n x n matrix with
+											all distances between cities
 		Returns:
 			Solution : Solution object with updated length
 
@@ -84,7 +90,7 @@ def evaluate_population(solutions, city_list, distance_matrix = None):
 		Args:
 			solutions (list of Solution) : list of instances of TSP solutions
 			city_list (list of City) : list of all cities
-			distance_matrix (list of double) : n x n matrix with all distance
-											values from each city to all other
+			distance_matrix (list of double, optional) : n x n matrix with
+											all distances between cities
 
 	"""

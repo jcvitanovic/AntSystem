@@ -47,7 +47,7 @@ class AntSystem:
 		iteration. Method perfoms task of updating pheromone trails for all 
 		paths between cities.
 		If argument top_ants_num is given, trail is updated only for 
-		top_ants_num best ants solutions.
+		top_ants_num best ant solutions.
 
 		"""
 		pass
