@@ -4,6 +4,7 @@
 		n (int) : number of top solutions for trail update
 		alpha (double) : pheromone constant 
 		beta (double) : heuristic constant
+		iterations (int) : number of iterations
 
 """ 
 m = 0
@@ -11,3 +12,4 @@ n = 0
 ro = 0
 alpha = 0
 beta = 0
+iterations =  0
