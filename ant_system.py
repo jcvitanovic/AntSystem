@@ -34,9 +34,7 @@ class AntSystem:
 		self.distance_matrix = distance_matrix
 		self.ant_population = []
 		self.pheromone_trails = [[pheromone_init] * city_num] * city_num
-		self.probability_matrix = [[None] * city_num] * city_num
-
-			
+		self.probability_matrix = [[None] * city_num] * city_num			
 
 	def run(self):
 		"""Entry point of Ant System algorithm, called after __init__.
@@ -66,18 +64,34 @@ class AntSystem:
 		pass
 
 	def __update_trails(self, top_ants_num = None):
-		"""Private method of class Ant System. Method is called in each
-		iteration.
+		"""Private method of class AntSystem. Method updates pheromone trails.
 			Args:
 				top_ants_num(int, optional) : trail is updated only for
 				top_ants_num best ant solutions
 		"""
-		pass
+		if top_ants_num is None:
+			top_ants_num = len(self.ant_population) #if argument top_ants_num 
+			#is not given, we update trails for all ants
+
+		for i in range(0, top_ants_num):
+			ant = self.ant_population[i]
+			delta = 1 / ant.tour_length #shorter paths will leave stronger
+			#pheromone trails
+			for j in range(0, len(self.city_list) - 1):
+				city_from = ant.city_permutation[j]
+				city_to = ant.city_permutation[j + 1]
+				self.pheromone_trails[city_from][city_to] += delta
+				self.pheromone_trails[city_to][city_from] += delta
+
 
 	def __evaporate_trails(self):
-		"""
+		"""Private method of class AntSystem. Method evaporates pheromone trails.
 
 		"""
-		pass
+		city_num = len (self.city_list)
+		for i in range(0, city_num):
+			for j in range(i+1, city_num):
+				self.pheromone_trails[i][j] *= (1 - ro)
+				self.pheromone_trails[j][i] *= (1 - ro)
 
 
