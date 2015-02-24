@@ -1,4 +1,4 @@
-"""Module contains values of configuration variables.
+"""Module contains default values of configuration variables.
 	Config variables:
 		m (int) : population size
 		n (int) : number of top solutions for trail update

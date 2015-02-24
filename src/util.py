@@ -2,7 +2,7 @@
 
 """
 
-def City:
+class City:
 	"""Object representation of a city.
 
 	"""
@@ -20,14 +20,14 @@ def City:
 		self.y = y
 		self.name = name
 
-def Solution:
-		"""Object representation of one particular solution for the TSP problem.
+class Solution:
+	"""Object representation of one particular solution for the TSP problem.
 
-			Attributes:
-				tour_length(double) : length of the tour for the solution
-				city_permutation(list of int) : array of indicies of cities, represents order of visiting each city
+		Attributes:
+			tour_length(double) : length of the tour for the solution
+			city_permutation(list of int) : array of indicies of cities, represents order of visiting each city
 
-		"""
+	"""
 
 	def __init__(self):
 		"""Constructor method for class Solution.
@@ -75,9 +75,3 @@ def evaluate_population(solutions, city_list, distance_matrix = None):
 			distance_matrix (list of double) : n x n matrix with all distance values from each city to all other
 
 	"""
-
-
-
-
-
-
